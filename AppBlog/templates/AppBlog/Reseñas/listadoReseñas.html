@@ -1,0 +1,29 @@
+{% extends 'AppBlog/principal.html' %}
+{% load static %}
+{% block head %}
+    <title>Reseñas</title>
+{% endblock head %}
+
+{% block body %}
+    <h2>En esta sección vas a encontrar las reseñas de los libros de los usuarios.</h2>
+
+{% endblock body %}
+
+{% block blogg %}
+<a  class="btn btn-primary" aria-current="page"  href="{% url 'Añadir Reseña' %}">Añadir Reseña.</a>
+
+{% for e in resultados %}
+
+    <p>Titulo del libro :{{e.titulo}}</p>
+    <p>Autor del libro: {{e.autorLib}}</p>
+    <p>Reseña de: {{e.autor}}</p>
+    <p>Año de impresión: {{e.año}}</p>
+    <p>Puntaje: {{e.puntaje}}</p>
+    <p>Reseña: {{e.reseña}}</p>
+     
+    <p>********************************************************</p>
+
+{% endfor %}
+
+
+{% endblock blogg %}

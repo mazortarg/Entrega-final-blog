@@ -1,0 +1,46 @@
+{% extends 'AppBlog/principal.html' %}
+
+{% block head %}
+    <title>Formulario - Editar Novedades</title>
+{% endblock head %}
+
+{% block body %}
+    <h2>Formulario - Editar Novedades</h2>
+
+{% endblock body %}
+
+{% block blogg %}
+
+
+
+{%if miFormulario.errors %}
+
+<p style="color: red">Están mal los datos</p>
+
+{% endif %}
+
+
+<form action="" enctype="multipart/form-data"  method="POST"> {%csrf_token%}
+
+    <table>
+
+        {{miFormulario.as_table}}
+
+    </table>
+
+    <input type="submit", value="Enviar", style="color:red">
+
+</form>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

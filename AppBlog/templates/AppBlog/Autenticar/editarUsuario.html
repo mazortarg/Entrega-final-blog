@@ -1,0 +1,33 @@
+{% extends 'AppBlog/principal.html' %}
+
+{% load static %}
+{% block head %}
+<title>Edicion de Usuario</title> 
+{% endblock head %}
+
+{% block body %}
+
+    <h2>Formulario - Editar Usuario</h2>
+
+
+    {%if miFormulario.errors %}
+
+    <p style="color: red">Están mal los datos</p>
+
+    {% endif %}
+
+
+    <form action="" method="POST"> {%csrf_token%}
+
+        <table>
+
+            {{miFormulario.as_table}}
+
+        </table>
+
+        <input type="submit", value="Enviar", style="color:red">
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'AppBlog/principal.html' %}
+{% load static %}
+{% block head %}
+    <title>Añadir estrenos</title>
+{% endblock head %}
+
+{% block body %}
+    <h2>En esta sección puedes añadir estrenos próximos.</h2>
+
+{% endblock body %}
+
+{% block blogg %}
+
+<form action="" enctype="multipart/form-data" method="POST">  {% csrf_token %}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" onclick="alert('Libro Cargado');" value="Enviar">
+
+
+</form>
+
+{% endblock %}

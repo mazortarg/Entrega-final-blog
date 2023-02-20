@@ -1,0 +1,21 @@
+{% extends 'AppBlog/principal.html' %}
+
+
+{% load static %}
+{% block head %}
+<title>Usuario</title> 
+{% endblock head %}
+
+{% block body %}
+<h2>Blog de la Biblioteca</h2>
+<span class="subheading">Inicio de seción</span>
+<body>
+    <form action="" method="POST">   {% csrf_token %}
+        
+        {{form.as_p}}
+
+        <button type="submit" >Iniciar Sesión</button>
+
+    </form>
+</body>
+{% endblock body %}

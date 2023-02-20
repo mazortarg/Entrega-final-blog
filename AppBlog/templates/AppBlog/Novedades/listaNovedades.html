@@ -1,0 +1,40 @@
+{% extends 'AppBlog/principal.html' %}
+
+{% block head %}
+    <title>Ultimos libros adquiridos</title>
+{% endblock head %}
+
+{% block body %}
+    <h2>En esta sección podés encontrar las últimas adquisiciones.</h2>
+
+{% endblock body %}
+
+{% block blogg %}
+
+<a  class="btn btn-primary" aria-current="page"  href="{% url 'AñadirNovedades' %}">Añadir un nuevo libro.</a>
+
+
+{% for e in resultados %}
+
+    <p>Título del libro :{{e.titulo}}</p>
+    <p>Fecha de Impresión: {{e.año}}</p>
+
+    <img src="{{e.imagen.url}}" alt="No hay imagen." width="200" height="300">
+
+    <button>
+        <a href="{% url 'Editar Libro' e.titulo %}">Editar el Libro.</a>
+    
+    </button>
+    <button>
+        <a href="{% url 'borrarNovedades' e.titulo %}">Borrar.</a>
+    
+    </button>
+
+    <p>********************************************************</p>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

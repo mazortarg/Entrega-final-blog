@@ -1,0 +1,25 @@
+{% extends 'AppBlog/principal.html' %}
+{% load static %}
+{% block head %}
+<title>Registro de Usuario</title> 
+{% endblock head %}
+
+{% block body %}
+
+<h2>Blog de la Biblioteca</h2>
+<span class="subheading">Registro de usuario</span>
+<body>
+<form  method="POST">{% csrf_token %}
+    
+    {{form.as_p}}
+   
+    <button type="submit">Registrarse</button>
+
+</form>
+</body>
+
+
+
+
+
+{% endblock body %}

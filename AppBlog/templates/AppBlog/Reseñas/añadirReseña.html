@@ -1,0 +1,27 @@
+{% extends 'Appblog/principal.html' %}
+
+{% block head %}
+    <title>Añadir reseñas</title>
+{% endblock head %}
+
+{% block body %}
+    <h2>En esta sección podés añadir tu reseñas de tu libro favorito</h2>
+
+{% endblock body %}
+
+{% block blogg %}
+
+<form action="" method="POST">  {% csrf_token %}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" onclick="alert('Reseña Cargada');"value="Enviar">
+
+
+</form>
+
+{% endblock %}
